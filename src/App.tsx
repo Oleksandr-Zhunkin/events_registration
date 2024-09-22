@@ -8,13 +8,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<EventsBoard />}>
-          <Route path="/register/:eventId" element={<EventRegistration />} />
-          <Route
-            path="/participants/:eventId"
-            element={<EventParticipants />}
-          />
-        </Route>
+        <Route path="/" element={<EventsBoard />} />
+        <Route path="/register/:eventId" element={<EventRegistration />} />
+        <Route path="/participants/:eventId" element={<EventParticipants />} />
       </Routes>
     </>
   );
