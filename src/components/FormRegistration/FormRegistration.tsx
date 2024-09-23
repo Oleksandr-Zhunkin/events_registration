@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useForm } from "react-hook-form";
 import s from "./FormRegistration.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
