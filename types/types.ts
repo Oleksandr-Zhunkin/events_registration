@@ -9,6 +9,9 @@ export interface Event {
 export interface EventState {
   events: Event[];
   totalPages: number | null;
+  uniqueTitles: [] | null;
+  uniqueOrganizers: [] | null;
+  uniqueEventDates: [] | null;
   isLoading: boolean;
   isError: null | object | unknown;
 }
@@ -44,4 +47,9 @@ export interface UserState {
 
 export interface PropUser {
   visitor: User;
+}
+
+export interface PropPagination {
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
 }

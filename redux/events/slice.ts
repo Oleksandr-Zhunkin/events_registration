@@ -13,6 +13,9 @@ const initialState: EventState = {
     },
   ],
   totalPages: null,
+  uniqueTitles: null,
+  uniqueOrganizers: null,
+  uniqueEventDates: null,
   isLoading: false,
   isError: null,
 };
@@ -32,10 +35,13 @@ const slice = createSlice({
           const month = String(date.getMonth() + 1).padStart(2, "0");
           const year = date.getFullYear();
 
-          const formattedDate = `${day}-${month}-${year}`;
+          const formattedDate = `${year}-${month}-${day}`;
           event.eventDate = formattedDate;
         });
         state.totalPages = action.payload.totalPages;
+        state.uniqueTitles = action.payload.uniqueTitles;
+        state.uniqueOrganizers = action.payload.uniqueOrganizers;
+        state.uniqueEventDates = action.payload.uniqueEventDates;
         state.events = data;
         state.isLoading = false;
       })

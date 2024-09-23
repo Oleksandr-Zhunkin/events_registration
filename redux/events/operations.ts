@@ -5,12 +5,23 @@ import { CreateVisitor } from "../../types/types";
 
 export const eventsThunk = createAsyncThunk(
   "events",
-  async (page: number, thunkApi) => {
+  async (
+    urlParams: {
+      currentPage?: number;
+      selectedTitle?: string;
+      selectedOrganizer?: string;
+      selectedDate?: string | null;
+    },
+    thunkApi
+  ) => {
     try {
       const options = {
         params: {
-          page: page,
+          page: urlParams.currentPage,
           limit: 12,
+          title: urlParams.selectedTitle,
+          eventDate: urlParams.selectedDate,
+          organizer: urlParams.selectedOrganizer,
         },
       };
       const { data } = await eventsApi.get("/", options);

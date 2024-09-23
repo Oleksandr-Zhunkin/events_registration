@@ -1,25 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectTotalPages } from "../../../redux/events/selectors";
-import { useEffect, useState } from "react";
-import { eventsThunk } from "../../../redux/events/operations";
-import { AppDispatch } from "../../../redux/store";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import s from "./Pagination.module.scss";
+import { PropPagination } from "../../../types/types";
 
-const Pagination = () => {
+const Pagination = ({ currentPage, setCurrentPage }: PropPagination) => {
   const totalPages = useSelector(selectTotalPages);
-  const dispatch: AppDispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
 
   const handlePageChange = (page: number) => {
     if (page !== currentPage) {
       setCurrentPage(page);
     }
   };
-  useEffect(() => {
-    dispatch(eventsThunk(currentPage));
-  }, [dispatch, currentPage]);
 
   const pages = [...Array(totalPages).keys()].map((num) => num + 1);
 

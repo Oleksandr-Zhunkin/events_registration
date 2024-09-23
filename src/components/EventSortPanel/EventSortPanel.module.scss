@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #0810ff;
+  border-radius: 12px;
+  max-width: 75%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.select_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0810ff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.select {
+  border: 1px solid #0810ff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: #0810ff;
+  border-radius: 8px;
+  border: 1px solid #0810ff;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.reset {
+  background-color: red;
+  border: 1px solid red;
+}
