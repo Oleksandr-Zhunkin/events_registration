@@ -36,6 +36,7 @@ const slice = createSlice({
           const year = date.getFullYear();
 
           const formattedDate = `${year}-${month}-${day}`;
+
           event.eventDate = formattedDate;
         });
         state.totalPages = action.payload.totalPages;

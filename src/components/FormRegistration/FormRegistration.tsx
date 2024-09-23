@@ -39,6 +39,7 @@ const FormRegistration = () => {
 
     dispatch(registerThunk(sendData));
     reset();
+    navigate(-1);
   });
 
   const handleCancel = () => {
